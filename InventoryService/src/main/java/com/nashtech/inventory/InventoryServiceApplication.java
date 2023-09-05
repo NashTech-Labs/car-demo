@@ -28,8 +28,7 @@ public class InventoryServiceApplication {
 		config.registerListenerInvocationErrorHandler("product-group",
 				conf -> new ProductsServiceEventsErrorHandler());
 
-//		config.registerListenerInvocationErrorHandler("product-group",
-//				conf -> PropagatingErrorHandler.instance());
+
 	}
 
 }
