@@ -6,5 +6,4 @@ resources:
 
 
   # need to change acc. to select gcp and azure deployment
-- azure-manifest/deployment.yaml
-- azure-manifest/service.yaml
+- azure-manifest/azure-deploy-service.yaml
