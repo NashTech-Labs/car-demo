@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: adminservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: adminservice
+  template:
+    metadata:
+      labels:
+        app: adminservice
+    spec:
+      containers:
+        - name: adminservice
+          image: your-acr-name.azurecr.io/your-image-name
+
+          ports:
+            - containerPort: 9091
+

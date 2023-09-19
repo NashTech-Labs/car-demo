@@ -1,0 +1,38 @@
+name: car-demo-common-service
+
+on:
+  push:
+    branches: [ feature/azure-deployment ]
+env:
+  # add env variables
+
+jobs:
+  setup-build-publish-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      id-token: 'write'
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 19
+        uses: actions/setup-java@v3
+        with:
+          java-version: '19'
+          distribution: 'temurin'
+          cache: maven
+      - name: Configure Kubernetes environment
+        uses: azure/aks-set-context@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Install Docker
+        run: |
+          curl -fsSL https://get.docker.com -o get-docker.sh
+          sudo sh get-docker.sh    
+
+      - name: Build, Publish, and Deploy
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          . apps-deployment-azure-script.sh "us-east1"

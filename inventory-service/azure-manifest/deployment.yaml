@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inventoryservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: inventoryservice
+  template:
+    metadata:
+      labels:
+        app: inventoryservice
+    spec:
+      containers:
+        - name: inventoryservice
+          image: your-acr-name.azurecr.io/your-image-name
+
+          ports:
+            - containerPort: 9091
+
