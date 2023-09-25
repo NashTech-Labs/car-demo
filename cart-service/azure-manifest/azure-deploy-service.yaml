@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cartservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cartservice
+  template:
+    metadata:
+      labels:
+        app: cartservice
+    spec:
+      containers:
+        - name: cartservice
+          image: your-acr-name.azurecr.io/your-image-name
+
+          ports:
+            - containerPort: 9096
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cartservice
+spec:
+  type: LoadBalancer
+  selector:
+    app: cartservice
+  ports:
+    - protocol: TCP
+      port: 9096
+      targetPort: 9096

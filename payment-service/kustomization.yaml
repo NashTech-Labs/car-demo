@@ -4,3 +4,7 @@ kind: Kustomization
 resources:
 - gcp-deploy-service.yaml
 
+
+
+  # need to change acc to gcp and azure deployment
+- azure-manifest/azure-deploy-service.yaml
