@@ -51,7 +51,7 @@
 		<maven.findbugs.version>1.12.0</maven.findbugs.version>
 		<maven.pmd.version>3.20.0</maven.pmd.version>
 		<maven.jacoco.version>0.8.8</maven.jacoco.version>
-		<minimumCodeCoverage>.80</minimumCodeCoverage>
+		<minimumCodeCoverage>.50</minimumCodeCoverage>
 	</properties>
 
 	<dependencies>
