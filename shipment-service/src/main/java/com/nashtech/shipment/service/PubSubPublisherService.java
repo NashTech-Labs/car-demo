@@ -26,6 +26,17 @@ public class PubSubPublisherService {
     private GCPConfig gcpConfig;
     private ObjectMapper objectMapper;
 
+    public PubSubPublisherService(GCPConfig gcpConfig, Publisher publisher) {
+        this.gcpConfig = gcpConfig;
+        TopicName topicName = TopicName.of(gcpConfig.getProjectId(), gcpConfig.getTopicId());
+        objectMapper = new ObjectMapper();
+        objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
+        this.publisher = publisher;
+    }
+
+    public PubSubPublisherService() {
+    }
+
     @PostConstruct
     public void init() throws IOException {
         TopicName topicName = TopicName.of(gcpConfig.getProjectId(), gcpConfig.getTopicId());
