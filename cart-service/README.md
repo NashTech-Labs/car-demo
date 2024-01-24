@@ -29,15 +29,3 @@ The CartEventHandler is responsible for managing cart-related events.
 #### Data Storage
 The Cart Service ensures that cart information is efficiently stored for each customer. The CartRepository is responsible for handling data interactions related to the shopping cart.
 
-### Key Components
-
-#### CartAggregate
-Manages the entire cart lifecycle, processing cart commands, and emitting events to reflect changes in the cart state. It serves as the authoritative source for cart-related operations.
-
-#### CartEventHandler
-Handles cart-related events, updating the state of the cart based on the received events. It collaborates with the CartRepository to ensure data consistency.
-
-#### CartRepository
-Manages the persistence of cart-related data, handling interactions with the underlying storage system to retrieve and store cart information.
-
-
