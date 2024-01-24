@@ -13,7 +13,8 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
-
+    - name: List Directory Contents
+      run: ls -R
     - name: Set up JDK
       uses: actions/setup-java@v2
       with:
@@ -35,7 +36,7 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       run: |
         #cd car-demo/shipment-service  # Adjust the path accordingly
-        mvn clean install sonar:sonar
+        mvn -X clean install sonar:sonar
   #sonarcloud:
    # name: SonarCloud
    # runs-on: ubuntu-latest
