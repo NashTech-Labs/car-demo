@@ -69,6 +69,10 @@ do
     #mvn deploy -X -s $GITHUB_WORKSPACE/settings.xml
     echo "----------testing------------------------"
     cat $HOME/.m2/settings.xml
+    echo "Contents of $HOME/.m2/settings.xml:"
+    while IFS= read -r line; do
+      echo "$line"
+    done < "$HOME/.m2/settings.xml"
     mvn clean deploy -X -s $HOME/.m2/settings.xml
     cd ..;;
 
