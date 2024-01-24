@@ -5,7 +5,7 @@
 The Cart Service is a meticulously designed component that facilitates customers in selecting items from the store's website and managing their shopping carts. It leverages a robust architecture to handle the complexities of cart management, providing a seamless experience for users.
 
 ### Prerequisites
-We must set up Axon Server to handle command and query operations, and configure MySQL as the persistent store destination.
+We must configure MySQL as the persistent store destination.
 
 ![cart-service-config.png](https://i.postimg.cc/1z7yX0RY/cart-service-config.png)
 
