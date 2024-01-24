@@ -18,8 +18,8 @@ jobs:
           java-version: '19'
           distribution: 'temurin'
           cache: maven
-      - name: ./SonarCloud Scan
-        working-directory: shipment-service
+      - name: SonarCloud Scan
+        working-directory: ./shipment-service
         run: mvn clean verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=nashtech -Dsonar.projectKey=shipment-service
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
