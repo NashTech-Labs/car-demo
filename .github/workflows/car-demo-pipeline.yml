@@ -1,4 +1,4 @@
-name: car-demo-common-service
+name: GCP Pipeline
 
 on:
   push:
