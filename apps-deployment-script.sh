@@ -18,6 +18,7 @@ build_and_deploy_service(){
        # mvn verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=nashtech
        mvn clean install -s $GITHUB_WORKSPACE/settings.xml -X
        echo "-------------$SERVICE_NAME deployed ----------"
+   fi
 }
 
 build_and_deploy_service1(){
