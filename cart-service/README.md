@@ -7,7 +7,7 @@ The Cart Service is a meticulously designed component that facilitates customers
 ### Prerequisites
 We must set up Axon Server to handle command and query operations, and configure MySQL as the persistent store destination.
 
-![cart-service-config.png](..%2F..%2F..%2FPictures%2FScreenshots%2Fcart-service-config.png)
+![cart-service-config.png](https://i.postimg.cc/1z7yX0RY/cart-service-config.png)
 
 ### Local setup
 - Setup axon-server and MySQL docker images
