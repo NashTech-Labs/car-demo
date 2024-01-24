@@ -34,22 +34,8 @@ jobs:
       - name: configure docker
         run: |-
           gcloud --quiet auth configure-docker
-
-      - name: Debug Information
-        run: |
-          cat $GITHUB_WORKSPACE/settings.xml
-          env
-     
-
-
-      - name: Display Actor and Token
-        run: |
-          echo "GITHUB_ACTOR: $GITHUB_ACTOR"
-          echo "GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}"
-          
       - name: Build, Publish, and Deploy
         run: |
           . apps-deployment-script.sh "us-east1" 
         env:
-         #CUSTOM_TOKEN: ${{ secrets.CUSTOM_GITHUB_TOKEN_PAT }}
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
