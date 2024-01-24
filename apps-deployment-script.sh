@@ -67,6 +67,8 @@ do
     cd common || exit
     mvn -B package --file pom.xml
     #mvn deploy -X -s $GITHUB_WORKSPACE/settings.xml
+    echo "----------testing------------------------"
+    cat $HOME/.m2/settings.xml
     mvn clean deploy -X -s $HOME/.m2/settings.xml
     cd ..;;
 
