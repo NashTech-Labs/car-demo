@@ -4,28 +4,51 @@
 
 The Cart Service is a meticulously designed component that facilitates customers in selecting items from the store's website and managing their shopping carts. It leverages a robust architecture to handle the complexities of cart management, providing a seamless experience for users.
 
-### Workflow
+### Prerequisites
+We must set up Axon Server to handle command and query operations, and configure MySQL as the persistent store destination.
 
-#### Cart Interaction
-The core functionality revolves around customer interaction with the shopping cart. Users can add items, remove them, and view the contents of their cart. This process is managed through various commands and events.
+![cart-service-config.png](..%2F..%2F..%2FPictures%2FScreenshots%2Fcart-service-config.png)
 
-#### Cart Commands
+### Local setup
+- Setup axon-server and MySQL docker images
+```
+local-dev > docker compose up -d
+```
+- Run the application
+```
+cart-service > mvn clean springboot:run 
+```
+- Endpoint for resting
+    - Generate a request for add to cart.
+```arm
+curl --location 'http://localhost:9090/cart/add' \
+--header 'Content-Type: application/json' \
+--data '{
+    "productId": "199",
+    "quantity": 1,
+    "userId": "1652"
+}'
+```
+- Generate a request for remove to cart.
+```arm
+curl --location 'http://localhost:9090/cart/remove' \
+--header 'Content-Type: application/json' \
+--data '{
+    "productId": "205",
+    "quantity": 1,
+    "userId": "1652"
+}'
+```
+- Generate a request to get cart contents.
+```
+curl --location 'http://localhost:9090/cart/get' \
+--header 'Content-Type: application/json' \
+--data '{
+    "userId": "1652"
+}'
+```
 
-- AddToCartCommand: Initiates the addition of an item to the shopping cart. 
-- RemoveFromCartCommand: Triggers the removal of an item from the cart.
+### Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-#### Cart Events
-
-- ItemAddedToCartEvent: Raised when an item is successfully added to the cart. 
-- ItemRemovedFromCartEvent: Signaled upon the successful removal of an item from the cart.
-
-#### Event Handling
-
-The CartEventHandler is responsible for managing cart-related events.
-
-- ItemAddedToCartEventHandler: Listens for the ItemAddedToCartEvent, updates the cart status, and may perform additional actions based on business logic. 
-- ItemRemovedFromCartEventHandler: Listens for the ItemRemovedFromCartEvent, adjusts the cart accordingly, and performs necessary updates.
-
-#### Data Storage
-The Cart Service ensures that cart information is efficiently stored for each customer. The CartRepository is responsible for handling data interactions related to the shopping cart.
-
+Please make sure to update tests as appropriate.
