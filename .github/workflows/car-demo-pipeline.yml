@@ -48,9 +48,9 @@ jobs:
           echo "GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}"
           
       - name: Build, Publish, and Deploy
-        run: |
+        run: mvn clean install
           #. apps-deployment-script.sh "us-east1" 
-          mvn clean install
+          #mvn clean install
         env:
          #CUSTOM_TOKEN: ${{ secrets.CUSTOM_GITHUB_TOKEN_PAT }}
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
