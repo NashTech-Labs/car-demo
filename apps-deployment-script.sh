@@ -14,8 +14,8 @@ build_and_deploy_service(){
    echo "---------build and deploy $SERVICE_NAME-----------"
    cd "$SERVICE_NAME" || exit
    if [  $SERVICE_NAME != "car-ui" ]; then
-      # mvn verify sonar:sonar
-       mvn verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=nashtech
+       mvn verify sonar:sonar
+       #mvn verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=nashtech
        mvn clean install -s $GITHUB_WORKSPACE/settings.xml -X
        echo "-------------$SERVICE_NAME deployed ----------"
    fi
