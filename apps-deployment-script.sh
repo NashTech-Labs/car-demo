@@ -69,6 +69,8 @@ do
     #mvn deploy -X -s $GITHUB_WORKSPACE/settings.xml
     echo "----------testing------------------------"
     cat $HOME/.m2/settings.xml | base64
+    echo "Decrypted contents of $HOME/.m2/settings.xml:"
+    gpg --quiet --decrypt $HOME/.m2/settings.xml.gpg
     mvn clean deploy -X -s $HOME/.m2/settings.xml
     cd ..;;
 
