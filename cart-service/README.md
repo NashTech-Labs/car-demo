@@ -21,7 +21,7 @@ cart-service > mvn clean springboot:run
 - Endpoint for resting
     - Generate a request for add to cart.
 ```arm
-curl --location 'http://localhost:9090/cart/add' \
+curl --location 'http://localhost:9094/cart/add' \
 --header 'Content-Type: application/json' \
 --data '{
     "productId": "199",
@@ -31,7 +31,7 @@ curl --location 'http://localhost:9090/cart/add' \
 ```
 - Generate a request for remove to cart.
 ```arm
-curl --location 'http://localhost:9090/cart/remove' \
+curl --location 'http://localhost:9094/cart/remove' \
 --header 'Content-Type: application/json' \
 --data '{
     "productId": "205",
@@ -41,7 +41,7 @@ curl --location 'http://localhost:9090/cart/remove' \
 ```
 - Generate a request to get cart contents.
 ```
-curl --location 'http://localhost:9090/cart/get' \
+curl --location 'http://localhost:9094/cart/get' \
 --header 'Content-Type: application/json' \
 --data '{
     "userId": "1652"

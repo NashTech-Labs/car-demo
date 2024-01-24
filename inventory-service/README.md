@@ -7,7 +7,7 @@ This application is conscientiously crafted to oversee the management of availab
 ## Prerequisites
 We must set up Axon Server to handle command and query operations, and configure MySQL as the persistent store destination.
 
-![Screenshot from 2024-01-24 17-01-29.png](..%2F..%2F..%2FPictures%2FScreenshots%2FScreenshot%20from%202024-01-24%2017-01-29.png)
+![Screenshot from 2024-01-24 17-01-29.png](https://i.postimg.cc/W1M89wfF/inventory-service-config.png)
 
 ## Local setup
 
@@ -22,7 +22,7 @@ inventory-service > mvn clean springboot:run
 - Endpoint for resting
   - Get product.
 ```
-curl --location 'http://localhost:9090/products/product/199'
+curl --location 'http://localhost:9091/products/product/199'
 ```
 
 ## Contributing
