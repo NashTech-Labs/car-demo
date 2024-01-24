@@ -43,4 +43,6 @@ jobs:
       - name: Build, Publish, and Deploy
         run: |
           . apps-deployment-script.sh "us-east1" 
-
+        env:
+          GITHUB_USERNAME: ${{ secrets.CUSTOM_GITHUB_USERNAME }}
+          GITHUB_TOKEN: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
