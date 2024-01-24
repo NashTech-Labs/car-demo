@@ -67,7 +67,7 @@ do
     cd common || exit
     mvn -B package --file pom.xml
     #mvn deploy -X -s $GITHUB_WORKSPACE/settings.xml
-    mvn deploy -X -s $HOME/.m2/settings.xml
+    mvn clean deploy -X -s $HOME/.m2/settings.xml
     cd ..;;
 
   # case 2 build and deploy order-service
