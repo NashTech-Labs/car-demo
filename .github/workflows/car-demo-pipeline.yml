@@ -34,7 +34,7 @@ jobs:
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       run: |
-        cd car-demo/shipment-service  # Adjust the path accordingly
+        #cd car-demo/shipment-service  # Adjust the path accordingly
         mvn clean install sonar:sonar
   #sonarcloud:
    # name: SonarCloud
