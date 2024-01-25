@@ -47,6 +47,17 @@ curl --location 'http://localhost:9094/cart/get' \
     "userId": "1652"
 }'
 ```
+## Sonar Configuration
+
+We have integrated sonar in our project for inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells, and security.
+
+Execute the following Maven command to run Sonar analysis:
+```dtd
+mvn clean verify sonar:sonar
+```
+### Sonar report
+![sonarReport.png](https://i.postimg.cc/C10ymMt3/Screenshot-from-2024-01-25-14-07-21.png)
+
 
 ### Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

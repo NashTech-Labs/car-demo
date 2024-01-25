@@ -97,3 +97,14 @@ The main dependencies used in this application are:
 - Azure SDK or GCP SDK: The SDK for the respective cloud provider is used to interact with the Pub-Sub service.
 
 For a complete list of dependencies, please refer to the pom.xml file in the project.
+
+## Sonar Configuration
+
+We have integrated sonar in our project for inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells, and security.
+
+Execute the following Maven command to run Sonar analysis:
+```dtd
+mvn clean verify sonar:sonar
+```
+### Sonar report
+![sonarReport.png](https://i.postimg.cc/0ysfB6Z2/Screenshot-from-2024-01-25-14-02-50.png)

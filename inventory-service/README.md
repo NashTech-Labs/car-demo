@@ -24,6 +24,16 @@ inventory-service > mvn clean springboot:run
 ```
 curl --location 'http://localhost:9091/products/product/199'
 ```
+## Sonar Configuration
+
+We have integrated sonar in our project for inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells, and security.
+
+Execute the following Maven command to run Sonar analysis:
+```dtd
+mvn clean verify sonar:sonar
+```
+### Sonar report
+![sonarReport.png](https://i.postimg.cc/x169kQbn/Screenshot-from-2024-01-25-13-49-35.png)
 
 ## Contributing
 

@@ -36,6 +36,18 @@ curl --location 'http://localhost:9090/orders/1652'
 Saga orchestration is a design pattern in distributed systems where car-demo process is broken down into a series of smaller, independent transactions (sagas) that can be orchestrated to ensure consistency and reliability across the entire process.
 
 ![saga.png](..%2Fdocumentation%2Fsaga.png)
+
+## Sonar Configuration
+
+We have integrated sonar in our project for inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells, and security.
+
+Execute the following Maven command to run Sonar analysis:
+```dtd
+mvn clean verify sonar:sonar
+```
+### Sonar report
+![sonarReport.png](https://i.postimg.cc/vTbtqTW6/Screenshot-from-2024-01-25-14-12-20.png)
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

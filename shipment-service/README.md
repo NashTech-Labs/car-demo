@@ -41,3 +41,14 @@ Listens for the ShipmentCreatedEvent.
 Initializes a Google Cloud Pub/Sub publisher during application startup.
     Publishes shipment data to a Pub/Sub topic.
     Gracefully shuts down the publisher during application shutdown.
+
+## Sonar Configuration
+
+We have integrated sonar in our project for inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells, and security.
+
+Execute the following Maven command to run Sonar analysis:
+```dtd
+mvn clean verify sonar:sonar
+```
+### Sonar report
+![sonarReport.png](https://i.postimg.cc/pVQmRqHv/Screenshot-from-2024-01-25-14-15-02.png)
