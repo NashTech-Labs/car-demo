@@ -13,7 +13,11 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
-
+     
+    - name: Show GITHUB_TOKEN
+      run: |-
+        echo "Token:" ${{ secrets.GITHUB_TOKEN }}
+      
     - name: Set up JDK
       uses: actions/setup-java@v2
       with:
