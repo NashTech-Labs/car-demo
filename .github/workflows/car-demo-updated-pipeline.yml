@@ -43,7 +43,7 @@ jobs:
           #echo '<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd"> <servers>    <server>      <id>github</id>      <username>sgknoldus</username>      <password>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</password>    </server>  </servers></settings>' > $GITHUB_WORKSPACE/settings.xml
           echo '<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd"> <servers>    <server>      <id>github</id>      <username>sgknoldus</username>      <password>${secrets.CUSTOM_GITHUB_TOKEN_PAT}</password>    </server>  </servers></settings>' > $GITHUB_WORKSPACE/settings.xml
           echo '<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd"> <servers>    <server>      <id>github</id>      <username>sgknoldus</username>      <password>${secrets.CUSTOM_GITHUB_TOKEN_PAT}</password>    </server>  </servers></settings>' > $HOME/.m2/settings.xml
-          echo "<settingsSecurity><master>${CUSTOM_GITHUB_TOKEN_PAT}</master></settingsSecurity>" > $HOME/.m2/settings-security.xml
+          
       - name: Build, Publish, and Deploy
         run: |
            . apps-deployment-script.sh "us-east1" 
