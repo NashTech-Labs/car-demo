@@ -131,7 +131,7 @@ jobs:
         run: |
            . apps-deployment-script.sh "us-east1" 
            echo "-----------printing ---------------"
-           echo "Token:" ${{ secrets.GITHUB_TOKEN }} | base64
+           #echo "Token:" ${{ secrets.GITHUB_TOKEN }} | base64
            #echo "Token:" ${{ env.GITHUB_TOKEN }} | base64
            #echo "Token:" ${{GITHUB_TOKEN }} | base64
         env:
