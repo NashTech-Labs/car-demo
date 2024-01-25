@@ -126,7 +126,7 @@ jobs:
           #mkdir -p $HOME/.m2
           rm $GITHUB_WORKSPACE/settings.xml
           #echo "<settings><servers><server><id>github</id><username>sgknoldus</username><password>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</password></server></servers></settings>" > $HOME/.m2/settings.xml
-          echo '<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd"> <servers>    <server>      <id>github</id>      <username>sgknoldus</username>      <password>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</password>    </server>  </servers></settings>' > $GITHUB_WORKSPACE/settings.xml
+          echo '<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd"> <servers>    <server>      <id>github</id>      <username>sgknoldus</username>      <password>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</password>    </server>  </servers></settings>' > $GITHUB_WORKSPACE/settings.xml
           
       - name: Build, Publish, and Deploy
         run: |
