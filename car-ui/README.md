@@ -4,12 +4,17 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
+Run `npm install` to install dependencies for a Node.js
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
+## Car Dashboard
+
+![Dashboard.png](https://i.postimg.cc/wv4hRqrY/Microsoft-Teams-image-10.png)
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
@@ -60,4 +65,16 @@ To place an order, the `/order` endpoint of the OrderApplication is called. When
 - Place Order: `http://localhost:9090/orders`
 - Remove from Cart: `http://localhost:9094/cart/remove`
 - Add to Cart: `http://localhost:9094/cart/add`
+
+## Sonar Configuration
+
+We have integrated sonar in our project for inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells, and security.
+
+Execute the following Maven command to run Sonar analysis:
+```dtd
+mvn clean verify sonar:sonar
+```
+### Sonar report
+![sonarReport.png](https://i.postimg.cc/SN2SvRR5/Screenshot-from-2024-01-25-14-04-41.png)
+
 

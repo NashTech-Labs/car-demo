@@ -53,3 +53,14 @@ After deploying the cloud function, publish a message to the configured topic.
 ### Monitoring Execution and Error Logs
 Check the logs to monitor the execution and any error messages on the cloud function.
 + Open the Firestore service and navigate to the configured collection to check the stored data.
+
+## Sonar Configuration
+
+We have integrated sonar in our project for inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells, and security.
+
+Execute the following Maven command to run Sonar analysis:
+```dtd
+mvn clean verify sonar:sonar
+```
+### Sonar report
+![sonarReport.png](https://i.postimg.cc/6pSz9Hfz/Screenshot-from-2024-01-25-14-09-04.png)
