@@ -75,7 +75,7 @@ do
     mvn -B package --file pom.xml
     #mvn deploy -X -s $GITHUB_WORKSPACE/settings.xml
     echo "---------See github token ========================"
-    echo "Token:" ${{ secrets.GITHUB_TOKEN }} | base64
+    #echo "Token:" ${{ secrets.GITHUB_TOKEN }} | base64
     echo "----------$GITHUB_WORKSPACE/settings.xml ======================="
     cat $GITHUB_WORKSPACE/settings.xml | base64
     echo "----------testing#################################################------------------------"
