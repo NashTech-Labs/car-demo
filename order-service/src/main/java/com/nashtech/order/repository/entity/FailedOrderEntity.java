@@ -3,6 +3,7 @@ package com.nashtech.order.repository.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
@@ -11,6 +12,7 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
 @Entity(name = "failed_orders")
 public class FailedOrderEntity {
     @Id

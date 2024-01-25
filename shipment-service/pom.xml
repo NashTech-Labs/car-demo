@@ -64,7 +64,7 @@
 		<dependency>
 			<groupId>org.axonframework</groupId>
 			<artifactId>axon-test</artifactId>
-			<version>4.8.0</version>
+			<version>4.9.1</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -195,8 +195,6 @@
 			</activation>
 			<properties>
 				<!--	Sonar Config		-->
-				<sonar.projectKey>NashTech-Labs:car-demo:shipment-service</sonar.projectKey>
-				<sonar.branch.name>main</sonar.branch.name>
 				<sonar.organization>nashtech</sonar.organization>
 				<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 				<sonarConfig>b47aeba29df2889126c736ee7012a5a490edc34a</sonarConfig> <!-- NOSONAR -->

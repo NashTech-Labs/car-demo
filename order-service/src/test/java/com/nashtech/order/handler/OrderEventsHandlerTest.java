@@ -1,3 +1,4 @@
+
 package com.nashtech.order.handler;
 
 import com.nashtech.common.utils.OrderStatus;
@@ -8,7 +9,6 @@ import com.nashtech.order.repository.FailedOrderRepository;
 import com.nashtech.order.repository.OrderRepository;
 import com.nashtech.order.repository.entity.FailedOrderEntity;
 import com.nashtech.order.repository.entity.OrderEntity;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
@@ -22,19 +22,16 @@ import java.time.ZoneOffset;
 import java.util.Date;
 import java.util.Optional;
 
-import static org.mockito.Mockito.doNothing;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
 
 @ContextConfiguration(classes = {OrderEventsHandler.class})
 @ExtendWith(SpringExtension.class)
 class OrderEventsHandlerTest {
     @MockBean
     private FailedOrderRepository failedOrderRepository;
-
     @Autowired
     private OrderEventsHandler orderEventsHandler;
-
     @MockBean
     private OrderRepository orderRepository;
 
@@ -52,7 +49,6 @@ class OrderEventsHandlerTest {
         orderEntity.setShipmentId("42");
         orderEntity.setTimestamp(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
         orderEntity.setUserId("42");
-
         OrderEntity orderEntity2 = new OrderEntity();
         orderEntity2.setOrderId("42");
         orderEntity2.setOrderStatus("Order Status");
@@ -70,10 +66,8 @@ class OrderEventsHandlerTest {
                 .paymentId("42")
                 .shipmentId("42")
                 .build();
-
         // Act
         orderEventsHandler.on(orderApprovedEvent);
-
         // Assert
         verify(orderRepository).findByOrderId(Mockito.<String>any());
         verify(failedOrderRepository).delete(Mockito.<FailedOrderEntity>any());
@@ -97,10 +91,8 @@ class OrderEventsHandlerTest {
                 .shipmentId("42")
                 .userId("42")
                 .build();
-
         // Act
         orderEventsHandler.on(event);
-
         // Assert that nothing has changed
         verify(failedOrderRepository).findById(Mockito.<String>any());
     }
@@ -110,7 +102,6 @@ class OrderEventsHandlerTest {
      */
     @Test
     void testOrderCreatedEventHandler() {
-        // Arrange
         OrderEntity orderEntity = new OrderEntity();
         orderEntity.setOrderId("42");
         orderEntity.setOrderStatus("Order Status");
@@ -120,7 +111,6 @@ class OrderEventsHandlerTest {
         orderEntity.setTimestamp(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
         orderEntity.setUserId("42");
         when(orderRepository.save(Mockito.<OrderEntity>any())).thenReturn(orderEntity);
-
         FailedOrderEntity failedOrderEntity = new FailedOrderEntity();
         failedOrderEntity.setOrderId("42");
         failedOrderEntity.setOrderStatus("Order Status");
@@ -139,11 +129,7 @@ class OrderEventsHandlerTest {
                 .quantity(1)
                 .userId("42")
                 .build();
-
-        // Act
         orderEventsHandler.on(event);
-
-        // Assert
         verify(failedOrderRepository).save(Mockito.<FailedOrderEntity>any());
         verify(orderRepository).save(Mockito.<OrderEntity>any());
     }
@@ -155,9 +141,35 @@ class OrderEventsHandlerTest {
     void testExceptionHandle() {
         Exception exception = new Exception("foo");
         try {
-            Assertions.assertEquals("foo", exception.getMessage());
+            assertEquals("foo", exception.getMessage());
             orderEventsHandler.handle(exception);
-        }catch (Exception e){}
+        } catch (Exception e) {
+        }
+    }
 
+    @Test
+    void testOrderCancelledEventHandlers() {
+        FailedOrderEntity existingFailedOrder = new FailedOrderEntity(); // create or mock as needed
+        Optional<FailedOrderEntity> orderOptional = Optional.of(existingFailedOrder);
+        when(failedOrderRepository.findById(Mockito.<String>any())).thenReturn(orderOptional);
+        OrderCancelledEvent event = OrderCancelledEvent.builder()
+                .orderId("42")
+                .orderStatus(OrderStatus.ORDER_NOT_APPROVED)
+                .paymentId("42")
+                .productId("42")
+                .reasonToFailed("Just cause")
+                .shipmentId("42")
+                .userId("42")
+                .build();
+        orderEventsHandler.on(event);
+        verify(failedOrderRepository).findById(Mockito.<String>any());
+        verify(failedOrderRepository).save(Mockito.<FailedOrderEntity>any());
+        FailedOrderEntity updatedFailedOrder = orderOptional.get();
+        assertEquals(event.getProductId(), updatedFailedOrder.getProductId());
+        assertEquals(event.getPaymentId(), updatedFailedOrder.getPaymentId());
+        assertEquals(event.getShipmentId(), updatedFailedOrder.getShipmentId());
+        assertEquals(event.getUserId(), updatedFailedOrder.getUserId());
+        assertEquals(event.getOrderStatus().toString(), updatedFailedOrder.getOrderStatus());
+        assertEquals(event.getReasonToFailed(), updatedFailedOrder.getReasonToFailed());
     }
 }
