@@ -1,4 +1,5 @@
-[![car-demo-common-service](https://github.com/NashTech-Labs/car-demo/actions/workflows/service-pipeline.yml/badge.svg)](https://github.com/NashTech-Labs/car-demo/actions/workflows/service-pipeline.yml)
+[![car-demo-common-service](https://img.shields.io/github/workflow/status/NashTech-Labs/car-demo/service-pipeline)](https://github.com/NashTech-Labs/car-demo/actions/workflows/service-pipeline.yml)
+
 # Car Demo
 
 * [About Car Demo](#about-car-demo)
