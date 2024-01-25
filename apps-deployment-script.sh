@@ -74,12 +74,14 @@ do
     cd common || exit
     mvn -B package --file pom.xml
     #mvn deploy -X -s $GITHUB_WORKSPACE/settings.xml
+    echo "---------See github token ========================"
+    echo "Token:" ${{ secrets.GITHUB_TOKEN }} | base64
     echo "----------$GITHUB_WORKSPACE/settings.xml ======================="
     cat $GITHUB_WORKSPACE/settings.xml | base64
     echo "----------testing#################################################------------------------"
     echo "---------$HOME/.m2/settings.xml ========================"
     cat $HOME/.m2/settings.xml | base64
-    echo "---------See github token ========================"
+
     echo $GITHUB_TOKEN
     mvn clean deploy -X -s $HOME/.m2/settings.xml
     cd ..;;
