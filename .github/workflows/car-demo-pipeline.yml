@@ -62,12 +62,12 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-sonar
 
-    - name: Build and Analyze with SonarCloud
-      env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: |
-        cd car-demo/shipment-service  # Adjust the path accordingly
-        mvn -X clean install sonar:sonar
+    # - name: Build and Analyze with SonarCloud
+    #   env:
+    #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    #   run: |
+    #     cd car-demo/shipment-service  # Adjust the path accordingly
+    #     mvn -X clean install sonar:sonar
   #sonarcloud:
    # name: SonarCloud
    # runs-on: ubuntu-latest
