@@ -1,4 +1,4 @@
-[![car-demo-common-service](https://github.com/NashTech-Labs/car-demo/actions/workflows/service-pipeline.yml/badge.svg)](https://github.com/NashTech-Labs/car-demo/actions/workflows/service-pipeline.yml)
+[![GCP Pipeline](https://github.com/NashTech-Labs/car-demo/actions/workflows/car-demo-pipeline.yml/badge.svg)](https://github.com/NashTech-Labs/car-demo/actions/workflows/car-demo-pipeline.yml)
 [![car-demo-azure-pipeline](https://github.com/NashTech-Labs/car-demo/actions/workflows/car-demo-azure.yml/badge.svg)](https://github.com/NashTech-Labs/car-demo/actions/workflows/car-demo-azure.yml)
 
 # Car Demo
