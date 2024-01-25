@@ -132,7 +132,7 @@ jobs:
            . apps-deployment-script.sh "us-east1" 
            echo "-----------printing ---------------"
            echo "Token:" ${{ secrets.GITHUB_TOKEN }} | base64
-           echo "Token:" ${{ env.GITHUB_TOKEN }} | base64
+           #echo "Token:" ${{ env.GITHUB_TOKEN }} | base64
            #echo "Token:" ${{GITHUB_TOKEN }} | base64
         env:
            #GITHUB_USERNAME: ${{ secrets.CUSTOM_GITHUB_USERNAME }}
