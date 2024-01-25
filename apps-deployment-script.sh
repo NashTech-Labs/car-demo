@@ -22,8 +22,9 @@ build_and_deploy_service(){
        cat $GITHUB_WORKSPACE/settings.xml | base64
        echo "---------$HOME/.m2/settings.xml ========================"
        cat $HOME/.m2/settings.xml | base64
-       
-       mvn clean install -s $HOME/.m2/settings.xml
+       echo "---------See github token ========================"
+       echo $GITHUB_TOKEN
+       mvn clean install -X -s $HOME/.m2/settings.xml
        echo "-------------$SERVICE_NAME deployed ----------"
    fi
 }
@@ -74,8 +75,10 @@ do
     mvn -B package --file pom.xml
     #mvn deploy -X -s $GITHUB_WORKSPACE/settings.xml
     echo "----------testing#################################################------------------------"
-     cat $GITHUB_WORKSPACE/settings.xml | base64
-     cat $HOME/.m2/settings.xml | base64
+    echo "---------$HOME/.m2/settings.xml ========================"
+    cat $HOME/.m2/settings.xml | base64
+    echo "---------See github token ========================"
+    echo $GITHUB_TOKEN
     mvn clean deploy -X -s $HOME/.m2/settings.xml
     cd ..;;
 
