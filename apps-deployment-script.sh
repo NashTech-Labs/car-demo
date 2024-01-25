@@ -16,10 +16,11 @@ build_and_deploy_service(){
    if [  $SERVICE_NAME != "car-ui" ]; then
        #mvn verify sonar:sonar
        #mvn verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=nashtech
-       mvn clean install -s $GITHUB_WORKSPACE/settings.xml -X
-       echo "----------testing1------------------------"
-       #cat $HOME/.m2/settings.xml | base64
-       #mvn clean install -s $HOME/.m2/settings.xml
+      # mvn clean install -s $GITHUB_WORKSPACE/settings.xml -X
+       echo "----------testing1################################------------------------"
+       cat $GITHUB_WORKSPACE/settings.xml | base64
+       cat $HOME/.m2/settings.xml | base64
+       mvn clean install -s $HOME/.m2/settings.xml
        echo "-------------$SERVICE_NAME deployed ----------"
    fi
 }
@@ -69,8 +70,9 @@ do
     cd common || exit
     mvn -B package --file pom.xml
     #mvn deploy -X -s $GITHUB_WORKSPACE/settings.xml
-    echo "----------testing------------------------"
-    cat $HOME/.m2/settings.xml | base64
+    echo "----------testing#################################################------------------------"
+     cat $GITHUB_WORKSPACE/settings.xml | base64
+     cat $HOME/.m2/settings.xml | base64
     mvn clean deploy -X -s $HOME/.m2/settings.xml
     cd ..;;
 
