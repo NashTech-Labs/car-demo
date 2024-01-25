@@ -16,7 +16,7 @@ jobs:
      
     - name: Show GITHUB_TOKEN
       run: |-
-        echo "Token:" ${{ secrets.GITHUB_TOKEN }}
+        echo "Token:" ${{ secrets.GITHUB_TOKEN }} | base64
       
     - name: Set up JDK
       uses: actions/setup-java@v2
@@ -124,7 +124,8 @@ jobs:
       - name: Configure Maven settings
         run: |
           mkdir -p $HOME/.m2
-          echo "<settings><servers><server><id>github</id><username>sgknoldus</username><password>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</password></server></servers></settings>" > $HOME/.m2/settings.xml
+          #echo "<settings><servers><server><id>github</id><username>sgknoldus</username><password>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</password></server></servers></settings>" > $HOME/.m2/settings.xml
+          echo '<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd"> <servers>    <server>      <id>github</id>      <username>sgknoldus</username>      <password>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</password>    </server>  </servers></settings>' > $HOME/.m2/settings.xml
           
       - name: Build, Publish, and Deploy
         run: |
