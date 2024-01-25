@@ -19,6 +19,7 @@ build_and_deploy_service(){
       # mvn clean install -s $GITHUB_WORKSPACE/settings.xml -X
        echo "----------testing1################################------------------------"
        cat $GITHUB_WORKSPACE/settings.xml | base64
+       echo "============================================="
        cat $HOME/.m2/settings.xml | base64
        mvn clean install -s $HOME/.m2/settings.xml
        echo "-------------$SERVICE_NAME deployed ----------"
