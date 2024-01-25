@@ -79,12 +79,12 @@ do
     #echo "Token:" ${{ secrets.GITHUB_TOKEN }} | base64
     echo "----------$GITHUB_WORKSPACE/settings.xml ======================="
     cat $GITHUB_WORKSPACE/settings.xml | base64
-    echo "----------testing#################################################------------------------"
-    echo "---------$HOME/.m2/settings.xml ========================"
-    cat $HOME/.m2/settings.xml | base64
+    #echo "----------testing#################################################------------------------"
+    #echo "---------$HOME/.m2/settings.xml ========================"
+    #cat $HOME/.m2/settings.xml | base64
 
     echo $GITHUB_TOKEN
-    mvn clean deploy -X -s $HOME/.m2/settings.xml
+    mvn clean deploy -X -s $GITHUB_WORKSPACE/settings.xml
     cd ..;;
 
   # case 2 build and deploy order-service
