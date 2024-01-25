@@ -1,4 +1,4 @@
-name: GCP Pipeline
+name: GCP Pipeline Updated
 
 on:
   push:
