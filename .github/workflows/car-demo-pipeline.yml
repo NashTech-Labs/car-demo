@@ -117,14 +117,14 @@ jobs:
         run: |-
           gcloud --quiet auth configure-docker
       
-      - name: Configure Maven settings
-        run: |
-          mkdir -p $HOME/.m2
-          echo "${{ secrets.MAVEN_SETTINGS_XML }}" > $HOME/.m2/settings.xml  
+      # - name: Configure Maven settings
+      #   run: |
+      #     mkdir -p $HOME/.m2
+      #     echo "${{ secrets.MAVEN_SETTINGS_XML }}" > $HOME/.m2/settings.xml  
           
-      - name: Build, Publish, and Deploy
-        run: |
-           . apps-deployment-script.sh "us-east1" 
-        env:
-          GITHUB_USERNAME: ${{ secrets.CUSTOM_GITHUB_USERNAME }}
-          #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Build, Publish, and Deploy
+      #   run: |
+      #      . apps-deployment-script.sh "us-east1" 
+      #   env:
+      #     GITHUB_USERNAME: ${{ secrets.CUSTOM_GITHUB_USERNAME }}
+      #     #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
