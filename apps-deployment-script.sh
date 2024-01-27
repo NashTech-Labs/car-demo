@@ -72,7 +72,7 @@ do
   "common")
     echo "=========================Deploying common package=================="
     cd common || exit
-    mvn -B package --file pom.xml
+    mvn -B package --file pom.xml -s $HOME/.m2/settings.xml
     #mvn deploy -X -s $GITHUB_WORKSPACE/settings.xml
     
     echo "---------See github token ========================"
