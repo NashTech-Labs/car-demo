@@ -34,7 +34,7 @@ jobs:
           cat projects-changes-deploy.txt | while read repo; do
             echo "Processing repository: $repo"
             cd $repo
-            mvn clean verify sonar:sonar -X
+            mvn clean verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=nashtech -X
             cd ..
           done
         env:
