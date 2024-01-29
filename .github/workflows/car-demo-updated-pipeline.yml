@@ -35,7 +35,8 @@ jobs:
             echo "Processing repository: $repo"
             cd $repo
             #mvn clean verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=nashtech -Dsonar.projectKey=$repo -Dsonar.branch.name=main -X
-            mvn clean install sonar:sonar -Dsonar.branch.name=main
+            #mvn clean install sonar:sonar -Dsonar.branch.name=main
+            mvn clean verify sonar:sonar -Dsonar.branch.name=main
             cd ..
           done
         env:
