@@ -27,7 +27,7 @@ jobs:
          ~/.sonar/cache
          ~/.sonar/cache-*
          key: ${{ runner.os }}-sonar
-        restore-keys: |
+         restore-keys: |
           ${{ runner.os }}-sonar
     - name: Run SonarCloud for Each Repository
       run: |
