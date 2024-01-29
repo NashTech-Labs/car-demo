@@ -34,8 +34,7 @@ jobs:
           cat projects-changes-deploy.txt | while read repo; do
             echo "Processing repository: $repo"
             cd $repo
-            echo "Current path================" $GITHUB_WORKSPACE
-            mvn clean verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=nashtech
+            mvn clean verify sonar:sonar
             cd ..
           done
         env:
