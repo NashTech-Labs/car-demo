@@ -7,7 +7,7 @@ GKE_CLUSTER="car-demo-gke"
 gcloud --quiet components install gke-gcloud-auth-plugin
 
 build_and_deploy_service(){
-
+# non GCP deployment
    SERVICE_NAME=$1
    CLUSTER_NAME=$2
    DEPLOYMENT_NAME=$3
