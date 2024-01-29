@@ -28,7 +28,7 @@ jobs:
             ~/.m2/repository
           key: ${{ runner.os }}-sonar
           restore-keys: |
-
+            ${{ runner.os }}-maven-
       - name: Run SonarCloud for Each Repository
         run: |
           cat projects-changes-deploy.txt | while read repo; do
