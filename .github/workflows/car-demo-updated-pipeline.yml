@@ -26,7 +26,7 @@ jobs:
             ~/.sonar/cache
             ~/.sonar/cache-*
             ~/.m2/repository
-          key: ${{ runner.os }}-sonar
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
       - name: Run SonarCloud for Each Repository
