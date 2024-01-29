@@ -1,6 +1,5 @@
 admin-service
 cart-service
-elastic-search
 inventory-service
 order-service
 payment-service
