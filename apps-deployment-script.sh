@@ -14,29 +14,6 @@ build_and_deploy_service(){
    echo "---------build and deploy $SERVICE_NAME-----------"
    cd "$SERVICE_NAME" || exit
    if [  $SERVICE_NAME != "car-ui" ]; then
-       #mvn verify sonar:sonar
-       #mvn verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=nashtech
-      # mvn clean install -s $GITHUB_WORKSPACE/settings.xml -X
-      
-       echo "----------$GITHUB_WORKSPACE/settings.xml ======================="
-       cat $GITHUB_WORKSPACE/settings.xml | base64
-       echo "---------$HOME/.m2/settings.xml ========================"
-       cat $HOME/.m2/settings.xml | base64
-       echo "---------See github token ========================"
-       echo $GITHUB_TOKEN
-       mvn clean install -X -s $HOME/.m2/settings.xml
-       echo "-------------$SERVICE_NAME deployed ----------"
-   fi
-}
-
-build_and_deploy_service1(){
-
-   SERVICE_NAME=$1
-   CLUSTER_NAME=$2
-   DEPLOYMENT_NAME=$3
-   echo "---------build and deploy $SERVICE_NAME-----------"
-   cd "$SERVICE_NAME" || exit
-   if [  $SERVICE_NAME != "car-ui" ]; then
       # mvn verify sonar:sonar
        # mvn verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=nashtech
        mvn clean install -s $GITHUB_WORKSPACE/settings.xml -X
@@ -72,20 +49,9 @@ do
   "common")
     echo "=========================Deploying common package=================="
     cd common || exit
-    mvn -B package --file pom.xml -s $HOME/.m2/settings.xml
-    #mvn deploy -X -s $GITHUB_WORKSPACE/settings.xml
-    
-    echo "---------See github token ========================"
-    #echo $GITHUB_TOKEN | base64
-    #echo "Token:" ${{ secrets.GITHUB_TOKEN }} | base64
-    #echo "----------$GITHUB_WORKSPACE/settings.xml ======================="
-    #cat $GITHUB_WORKSPACE/settings.xml | base64
-    #echo "----------testing#################################################------------------------"
-    echo "---------$HOME/.m2/settings.xml ========================"
-    #cat $HOME/.m2/settings.xml | base64
-
-    #echo $GITHUB_TOKEN
-    mvn clean deploy -X -s $HOME/.m2/settings.xml
+    mvn -B package --file pom.xml
+    mvn deploy -X -s $GITHUB_WORKSPACE/settings.xml
+    #mvn deploy -X -s $HOME/.m2/settings.xml
     cd ..;;
 
   # case 2 build and deploy order-service
