@@ -38,9 +38,7 @@ jobs:
             #mvn clean verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=nashtech -Dsonar.projectKey=$repo -Dsonar.branch.name=main -Dsonar.login=${{ secrets.SONAR_TOKEN }} -X
             #mvn clean verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=nashtech
             echo "Current path================" $GITHUB_WORKSPACE/$repo
-            pushd car-demo/$repo
-            mvn clean verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=nashtech -Dsonar.projectKey=$repo -Dsonar.branch.name=main -Dsonar.login=${{ secrets.SONAR_TOKEN }} -X
-            popd
+            mvn -f $GITHUB_WORKSPACE/checkout/$repo/pom.xml clean verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=nashtech -Dsonar.projectKey=$repo -Dsonar.branch.name=main -Dsonar.login=${{ secrets.SONAR_TOKEN }} -X
           done
             #cd ..
           done
