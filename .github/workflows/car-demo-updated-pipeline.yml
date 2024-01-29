@@ -37,8 +37,8 @@ jobs:
             #car-demo/$repo || exit 1
             #mvn clean verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=nashtech -Dsonar.projectKey=$repo -Dsonar.branch.name=main -Dsonar.login=${{ secrets.SONAR_TOKEN }} -X
             #mvn clean verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=nashtech
-            repo_path="car-demo/$repo"
-            mvn -f $repo_path clean verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=nashtech -Dsonar.projectKey=$repo -Dsonar.branch.name=main -Dsonar.login=${{ secrets.SONAR_TOKEN }} -X
+            mvn -f car-demo/$repo clean verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=nashtech -Dsonar.projectKey=$repo -Dsonar.branch.name=main -Dsonar.login=${{ secrets.SONAR_TOKEN }} -X
+          done
             #cd ..
           done
         env:
