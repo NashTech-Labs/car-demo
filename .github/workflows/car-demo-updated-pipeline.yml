@@ -34,7 +34,7 @@ jobs:
           cat projects-changes-deploy.txt | while read repo; do
             echo "Processing repository: $repo"
             cd $repo
-            mvn clean install sonar:sonar
+            mvn clean verify sonar:sonar -X
             cd ..
           done
         env:
