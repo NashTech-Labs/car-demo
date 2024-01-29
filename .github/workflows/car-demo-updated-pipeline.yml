@@ -2,7 +2,9 @@ name: GCP Pipeline
 
 on:
   push:
-    branches: [ main ]
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]  
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
 
