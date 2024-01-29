@@ -191,7 +191,7 @@
             <properties>
                 <!--	Sonar Config		-->
                 <sonar.organization>nashtech</sonar.organization>
-                <sonar.projectKey>order-service</sonar.projectKey>
+               <!-- <sonar.projectKey>order-service</sonar.projectKey> -->
                 <sonar.host.url>https://sonarcloud.io</sonar.host.url>
                 <sonarConfig>b47aeba29df2889126c736ee7012a5a490edc34a</sonarConfig> <!-- NOSONAR -->
                 <sonar.token>${sonarConfig}</sonar.token> <!-- NOSONAR -->
