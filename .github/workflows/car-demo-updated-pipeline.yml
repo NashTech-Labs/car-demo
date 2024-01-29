@@ -35,8 +35,8 @@ jobs:
          echo "Processing repository: $repo"
            cd $repo
            mvn clean install sonar:sonar
-       cd ..
-       done
+         cd ..
+         done
   setup-build-publish-deploy:
     runs-on: ubuntu-latest
     permissions:
