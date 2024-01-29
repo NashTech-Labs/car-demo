@@ -37,7 +37,7 @@ jobs:
             echo "Current path================" $GITHUB_WORKSPACE
             mvn clean verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=nashtech
           done
-          cd..
+          cd ..
           done
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
