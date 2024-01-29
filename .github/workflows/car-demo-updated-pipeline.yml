@@ -9,34 +9,30 @@ env:
 jobs:
   sonarcloud:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
-
-    - name: Set up JDK
-      uses: actions/setup-java@v2
-      with:
-        distribution: 'adopt'
-        java-version: '19'
-
-    - name: Cache SonarCloud packages
-      uses: actions/cache@v2
-      with:
-       path: |
-         ~/.sonar/cache
-         ~/.sonar/cache-*
-         key: ${{ runner.os }}-sonar
-         restore-keys: |
-          ${{ runner.os }}-sonar
-    - name: Run SonarCloud for Each Repository
-      run: |
-         cat projects-changes-deploy.txt | while read repo; do
-         echo "Processing repository: $repo"
-           cd $repo
-           mvn clean install sonar:sonar
-         cd ..
-         done
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: adopt
+          java-version: "19"
+      - name: Cache SonarCloud packages
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.sonar/cache
+            ~/.sonar/cache-*
+          key: ${{ runner.os }}-sonar
+          restore-keys: |
+      - name: Run SonarCloud for Each Repository
+        run: |
+          cat projects-changes-deploy.txt | while read repo; do
+            echo "Processing rep ository: $repo"
+            cd $repo
+            mvn clean install sonar:sonar
+           cd ..
+           done
   setup-build-publish-deploy:
     runs-on: ubuntu-latest
     permissions:
