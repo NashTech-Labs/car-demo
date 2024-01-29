@@ -50,7 +50,8 @@ jobs:
            echo "-----------printing ---------------"
            #echo "${{ secrets.GITHUB_TOKEN }}" | base64
            #echo "${{ env.GITHUB_TOKEN }}" | base64
-           echo "$GITHUB_TOKEN" | base64
+           #echo "$GITHUB_TOKEN" | base64
         env:
            #GITHUB_USERNAME: ${{ secrets.CUSTOM_GITHUB_USERNAME }}
-           GITHUB_TOKEN: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
+           #GITHUB_TOKEN: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
+           GITHUB_TOKEN: ${{secrets.CUSTOM_GITHUB_TOKEN_PAT}}
