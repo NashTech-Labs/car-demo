@@ -34,13 +34,11 @@ jobs:
           cat projects-changes-deploy.txt | while read repo; do
             echo "Processing repository: $repo"
             #cd $repo
-            #car-demo/$repo || exit 1
-            #mvn clean verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=nashtech -Dsonar.projectKey=$repo -Dsonar.branch.name=main -Dsonar.login=${{ secrets.SONAR_TOKEN }} -X
-            #mvn clean verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=nashtech
-            echo "Current path================" $GITHUB_WORKSPACE/$repo
-            mvn -f $GITHUB_WORKSPACE/checkout/$repo/pom.xml clean verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=nashtech -Dsonar.projectKey=$repo -Dsonar.branch.name=main -Dsonar.login=${{ secrets.SONAR_TOKEN }} -X
+            car-demo/$repo
+            echo "Current path================" $GITHUB_WORKSPACE
+            mvn clean verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=nashtech
           done
-            #cd ..
+          cd..
           done
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
