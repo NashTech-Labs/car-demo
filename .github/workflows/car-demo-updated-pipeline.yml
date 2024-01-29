@@ -33,6 +33,8 @@ jobs:
             mvn clean install sonar:sonar
            cd ..
            done
+        env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   setup-build-publish-deploy:
     runs-on: ubuntu-latest
     permissions:
