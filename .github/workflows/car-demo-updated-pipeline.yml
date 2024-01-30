@@ -30,7 +30,6 @@ jobs:
             # Check if it's the Angular project (car-ui)
             if [ "$repo" == "car-ui" ]; then
               # Angular-specific commands
-              cd car-demo/car-ui
               npm install
 
               # Install SonarScanner for Node.js
