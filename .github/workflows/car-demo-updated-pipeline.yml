@@ -25,7 +25,20 @@ jobs:
           cat projects-changes-deploy.txt | while read repo; do
             echo "Processing repository: $repo"
             cd $repo
-            mvn clean verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=nashtech -Dsonar.branch.name=master
+            #mvn clean verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=nashtech -Dsonar.branch.name=master
+
+            # Check if it's the Angular project (car-ui)
+            if [ "$repo" == "car-ui" ]; then
+              # Angular-specific commands
+              #cd car-demo/car-ui
+              npm install
+              sonar-scanner -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=nashtech -Dsonar.branch.name=master
+            else
+              # Maven-specific commands
+              mvn clean verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=nashtech -Dsonar.branch.name=master
+            fi
+
+            
             cd ..
           done        
         env:
