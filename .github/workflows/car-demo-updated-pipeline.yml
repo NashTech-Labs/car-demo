@@ -32,6 +32,11 @@ jobs:
               # Angular-specific commands
               #cd car-demo/car-ui
               npm install
+
+              # Install SonarScanner for Node.js
+              npm install -g sonarqube-scanner
+              
+              # Run SonarScanner for Node.js
               sonar-scanner -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=nashtech -Dsonar.branch.name=master
             else
               # Maven-specific commands
