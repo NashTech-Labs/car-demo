@@ -31,7 +31,10 @@ jobs:
             if [ "$repo" == "car-ui" ]; then
               # Angular-specific commands
               npm install
-
+              
+              # Run tests and generate code coverage reports
+              npm run test -- --coverage
+              
               # Install SonarScanner for Node.js
               npm install -g sonarqube-scanner
               
