@@ -31,7 +31,10 @@ jobs:
             if [ "$repo" == "car-ui" ]; then
               # Angular-specific commands
               npm install
-              
+
+              #Install Angular CLI
+              npm install -g @angular/cli
+  
               # Run tests and generate code coverage reports
               ng test --code-coverage
               
