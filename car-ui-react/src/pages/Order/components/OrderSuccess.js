@@ -8,7 +8,7 @@ export const OrderSuccess = () => {
           </div>
           <div className="my-5">
               <p>Your order is confirmed.</p>
-              <p>Please check your mail (user@email.com) for the eBook.</p>
+              <p>Please check your mail (user@email.com) for the purchased Car.</p>
               <p className="my-5">Payment ID: xyz_123456789</p>
           </div>
           <a href="/" type="button" className="text-white bg-blue-700 hover:bg-blue-800 rounded-lg text-lg px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none">Continue Shopping <i className="ml-2 bi bi-cart"></i></a>
