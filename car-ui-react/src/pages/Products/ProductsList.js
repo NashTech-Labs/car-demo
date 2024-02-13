@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
 import { ProductCard } from "../../components/Elements/ProductCard";
-import productDB from "../../data/db.json";
 import {Link} from "react-router-dom";
-
 
 export const ProductsList = () => {
 
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-            setProducts(productDB.products);
+        async function fetchProducts() {
+            const response = await fetch("http://localhost:8000/products");
+            const data = await response.json()
+            setProducts(data);
+        }
+        fetchProducts();
     }, []);
   return (
     <main>
