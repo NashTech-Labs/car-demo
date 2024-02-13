@@ -8,7 +8,7 @@ export const ProductsList = () => {
 
     useEffect(() => {
         async function fetchProducts() {
-            const response = await fetch("http://localhost:8000/products");
+            const response = await fetch("https://my.api.mockaroo.com/model_random.json?key=dcbc8750");
             const data = await response.json()
             setProducts(data);
         }
@@ -25,7 +25,7 @@ export const ProductsList = () => {
           </Link>
         <div className="my-5 flex justify-between">
           <span className="text-2xl font-semibold dark:text-slate-100 mb-5">
-            All Cars (10)
+          All Cars ({products.length})
           </span>
           <span>
             <button
