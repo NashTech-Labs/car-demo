@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { ProductCard } from "../../components/Elements/ProductCard";
+import { ProductCard } from "../../components";
 import {Link} from "react-router-dom";
+
 
 export const ProductsList = () => {
 
@@ -18,11 +19,11 @@ export const ProductsList = () => {
     <main>
       <section className="my-5">
         {/* <h1 className="text-2xl text-center font-semibold dark:text-slate-100 mb-5 underline underline-offset-8">Available Cars</h1>     */}
-          <Link to="/cart" className="text-gray-700 dark:text-white mr-5">
+          {/* <Link to="/cart" className="text-gray-700 dark:text-white mr-5">
                     <span className="text-2xl bi bi-cart-fill relative">
                       <span className="text-white text-sm absolute -top-1 left-2.5 bg-rose-500 px-1 rounded-full ">0</span>
                     </span>
-          </Link>
+          </Link> */}
         <div className="my-5 flex justify-between">
           <span className="text-2xl font-semibold dark:text-slate-100 mb-5">
             All Cars (10)
