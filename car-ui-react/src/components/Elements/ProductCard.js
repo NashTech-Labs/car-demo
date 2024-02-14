@@ -1,11 +1,12 @@
 import React from 'react';
 import carPicture from "../../assets/images/10001.avif"
+import { Rating } from './Rating';
 
 export const ProductCard = ({ product }) => {
     if (!product) {
       return null; // Or handle the case where product is undefined
     }
-    const { carId, brand, model, year, color, mileage, price, quantity, tax, poster, in_stock } = product;
+    const { brand, model, year, color, mileage, price, quantity, tax, poster, in_stock, rating, best_seller } = product;
   
     return (
       <div className="m-3 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
@@ -31,16 +32,29 @@ export const ProductCard = ({ product }) => {
           <p className="mb-3 font-normal text-black dark:text-gray-400">
             <span>Tax: </span><span>{tax}</span>
           </p>
+
+          <p className="mb-3 font-normal text-black dark:text-gray-400">
+            <span>Stock: </span>
+            <span>{in_stock ? "Available" : "Out of Stock"}</span>
+          </p>
+
+                
           
           <div className="flex items-center my-2">
-            <i className="text-lg bi bi-star-fill text-yellow-500 mr-1">{in_stock}</i>
+            <Rating rating={rating}/>
+            {/* <i className="text-lg bi bi-star-fill text-yellow-500 mr-1">{rating}</i> */}
           </div>
-  
+
           <p className="flex justify-between items-center">
             <span className="text-2xl dark:text-gray-200">
               <span>INR </span><span>{price}</span>
             </span>
-            <button className='inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800'>Add To Cart +</button>
+          </p>
+
+          <p className="mb-3 font-normal text-black dark:text-gray-2000">
+            <span className={best_seller ? "text-gray-400 italic" : ""}>
+              {best_seller ? "Best Seller" : ""}
+            </span>
           </p>
         </div>
       </div>
