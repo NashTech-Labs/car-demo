@@ -11,7 +11,7 @@ export const ProductCard = ({ product }) => {
     return (
       <div className="m-3 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
         <a href="/" className="relative">
-          {/* <span className="absolute top-4 left-2 px-2 bg-orange-500 bg-opacity-90 text-white rounded">Best Seller</span>  */}
+        { best_seller && <span className="absolute top-4 left-2 px-2 bg-orange-500 bg-opacity-90 text-white rounded">Best Seller</span> }
           <img className="rounded-t-lg w-full h-64" src={poster} alt="" />
         </a>
         <div className="p-5">
@@ -37,24 +37,17 @@ export const ProductCard = ({ product }) => {
             <span>Stock: </span>
             <span>{in_stock ? "Available" : "Out of Stock"}</span>
           </p>
-
                 
           
           <div className="flex items-center my-2">
             <Rating rating={rating}/>
-            {/* <i className="text-lg bi bi-star-fill text-yellow-500 mr-1">{rating}</i> */}
           </div>
 
           <p className="flex justify-between items-center">
             <span className="text-2xl dark:text-gray-200">
               <span>INR </span><span>{price}</span>
             </span>
-          </p>
-
-          <p className="mb-3 font-normal text-black dark:text-gray-2000">
-            <span className={best_seller ? "text-gray-400 italic" : ""}>
-              {best_seller ? "Best Seller" : ""}
-            </span>
+             <button className={`inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 ${product.in_stock ? "" : "cursor-not-allowed"}`} disabled={ product.in_stock ? "" : "disabled" }>Add To Cart <i className="ml-1 bi bi-plus-lg"></i></button> 
           </p>
         </div>
       </div>

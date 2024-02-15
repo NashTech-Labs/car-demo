@@ -28,7 +28,7 @@ export const FilterProvider = ({children}) => {
     }
 
     function inStock(products) {
-        return state.onlyInStock ? products.filter(product => product.inStock === true) : products;
+        return state.onlyInStock ? products.filter(product => product.in_stock === true) : products;
     }
 
 
