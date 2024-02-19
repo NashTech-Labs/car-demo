@@ -1,12 +1,27 @@
-import React from 'react';
-import carPicture from "../../assets/images/10001.avif"
+import React, {useEffect, useState}  from 'react';
+import {useCart} from "../../context";
+
 
 export const ProductCard = ({ product }) => {
+    const { brand, model, year, color, mileage, price, quantity, tax, poster, in_stock } = product;
+    const { cartList, addToCart, removeFromCart } = useCart();
+    const [inCart, setInCart] = useState(false);
+
+    useEffect(() => {
+        if (product) {
+            const productInCart = cartList.find(item => item.id === product.id);
+            if (productInCart) {
+                setInCart(true);
+            } else {
+                setInCart(false);
+            }
+        }
+    }, [cartList, product]);
+
     if (!product) {
-      return null; // Or handle the case where product is undefined
+        return null;
     }
-    const { carId, brand, model, year, color, mileage, price, quantity, tax, poster, in_stock } = product;
-  
+
     return (
       <div className="m-3 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
         <a href="/" className="relative">
@@ -40,7 +55,8 @@ export const ProductCard = ({ product }) => {
             <span className="text-2xl dark:text-gray-200">
               <span>INR </span><span>{price}</span>
             </span>
-            <button className='inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800'>Add To Cart +</button>
+              { !inCart && <button onClick={() => addToCart(product)} className={"inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800"}>Add To Cart <i className="ml-1 bi bi-plus-lg"></i></button>}
+              { inCart && <button onClick={() => removeFromCart(product)} className={"inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-800"}>Remove Item <i className="ml-1 bi bi-trash3"></i></button> }
           </p>
         </div>
       </div>
