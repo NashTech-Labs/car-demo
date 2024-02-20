@@ -3,7 +3,7 @@ import {useCart} from "../../context";
 import {Rating} from './Rating';
 
 export const ProductCard = ({ product }) => {
-    const { brand, model, year, color, mileage, price, quantity, tax, poster, in_stock } = product;
+    const { brand, model, year, color, mileage, price, quantity, tax, poster, in_stock , best_seller, rating} = product;
     const { cartList, addToCart, removeFromCart } = useCart();
     const [inCart, setInCart] = useState(false);
 

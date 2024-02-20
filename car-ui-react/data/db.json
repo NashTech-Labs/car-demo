@@ -1,20 +1,20 @@
 {
   "products": [
     {
-        "carId": 4371,
-        "brand": "Ford",
-        "model": "Contour",
-        "year": 1198,
-        "color": "Teal",
-        "mileage": 70.811136,
-        "price": 2000000,
-        "quantity": 100,
-        "tax": 1.4,
-        "rating": 3,
-        "best_seller": false,
-        "timestamp": "2004-10-19 10: 23: 54",
-        "poster": "https://i.pinimg.com/736x/fa/be/08/fabe082d7ca96325961ddd6019583cb7--mystique-ford-contour.jpg",
-        "in_stock": true
+      "carId": 4371,
+      "brand": "Ford",
+      "model": "Contour",
+      "year": 1198,
+      "color": "Teal",
+      "mileage": 70.811136,
+      "price": 2000000,
+      "quantity": 100,
+      "tax": 1.4,
+      "rating": 3,
+      "best_seller": false,
+      "timestamp": "2004-10-19 10: 23: 54",
+      "poster": "https://i.pinimg.com/736x/fa/be/08/fabe082d7ca96325961ddd6019583cb7--mystique-ford-contour.jpg",
+      "in_stock": true
     },
     {
         "carId": 4548,
