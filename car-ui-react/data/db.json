@@ -200,6 +200,12 @@
       "name": "Deepak Kumar",
       "email": "deepak.kumar@nashtechglobal.com",
       "password": "Deepak@1234"
+    },
+    {
+      "id": 3,
+      "name": "demo",
+      "email": "demo@gmail.com",
+      "password": "Deepak@1234"
     }
   ]
 }
