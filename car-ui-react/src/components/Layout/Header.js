@@ -2,11 +2,14 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/logo.png";
 import {useCart} from "../../context";
+import { DropdownLoggedOut, DropdownLoggedIn } from "../index";
 
 export const Header = () => {
   const [darkMode, setDarkMode] = useState(JSON.parse(localStorage.getItem("darkMode")) || false);
+  const [dropdown, setDropdown] = useState(false);
   const {cartList} = useCart();
-
+  const id = JSON.parse(sessionStorage.getItem("userId"));
+  
   useEffect(() => {
     localStorage.setItem("darkMode", JSON.stringify(darkMode));
     
@@ -33,7 +36,8 @@ export const Header = () => {
                       <span className="text-white text-sm absolute -top-1 left-2.5 bg-rose-500 px-1 rounded-full ">{cartList.length}</span>
                     </span>                    
                   </Link>
-                  <span className="bi bi-person-circle cursor-pointer text-2xl text-gray-700 dark:text-white"></span>
+                  <span onClick={()=> setDropdown(!dropdown)} className="bi bi-person-circle cursor-pointer text-2xl text-gray-700 dark:text-white"></span>
+                  { dropdown && ( id ? <DropdownLoggedIn setDropdown={setDropdown} /> : <DropdownLoggedOut setDropdown={setDropdown} />) }
               </div>
           </div>
       </nav>
