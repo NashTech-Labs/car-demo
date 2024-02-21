@@ -14,7 +14,8 @@
       "best_seller": false,
       "timestamp": "2004-10-19 10: 23: 54",
       "poster": "https://i.pinimg.com/736x/fa/be/08/fabe082d7ca96325961ddd6019583cb7--mystique-ford-contour.jpg",
-      "in_stock": true
+      "in_stock": true,
+      "id": "f566"
     },
     {
       "carId": 4548,
@@ -30,7 +31,8 @@
       "best_seller": true,
       "timestamp": "2004-10-19 10: 23: 54",
       "poster": "https://www.cartoq.com/wp-content/uploads/2021/09/XUV700-Dark-Knight-edition-featured.jpg",
-      "in_stock": false
+      "in_stock": false,
+      "id": "b2bc"
     },
     {
       "carId": 1556,
@@ -47,7 +49,7 @@
       "timestamp": "2004-10-19 10: 23: 54",
       "poster": "https://static.autox.com/uploads/2022/06/Mahindra-Scorpio-N-exterior.png",
       "in_stock": true,
-      "id": "9320"
+      "id": "1da2"
     },
     {
       "carId": 4752,
@@ -63,7 +65,8 @@
       "best_seller": false,
       "timestamp": "2004-10-19 10: 23: 54",
       "poster": "https://paultan.org/image/2020/10/2021-Hyundai-i20-N-Exterior-7.jpg",
-      "in_stock": true
+      "in_stock": true,
+      "id": "5d64"
     },
     {
       "carId": 4654,
@@ -79,7 +82,8 @@
       "best_seller": true,
       "timestamp": "2004-10-19 10: 23: 54",
       "poster": "https://th.bing.com/th/id/OIP.5i-hWiOn_6RnqXoDoA-H2QHaEo?rs=1&pid=ImgDetMain",
-      "in_stock": false
+      "in_stock": false,
+      "id": "349d"
     },
     {
       "carId": 1458,
@@ -95,7 +99,8 @@
       "best_seller": false,
       "timestamp": "2004-10-19 10: 23: 54",
       "poster": "https://english.cdn.zeenews.com/sites/default/files/2022/10/31/1110417-tata-safari-classic-front.jpg",
-      "in_stock": true
+      "in_stock": true,
+      "id": "a64d"
     },
     {
       "carId": 5467,
@@ -111,7 +116,8 @@
       "best_seller": false,
       "timestamp": "2004-10-19 10: 23: 54",
       "poster": "https://th.bing.com/th/id/OIP.qzSsXvyXs_A9WpKfF97yJQHaFJ?rs=1&pid=ImgDetMain",
-      "in_stock": true
+      "in_stock": true,
+      "id": "ad0a"
     },
     {
       "carId": 4567,
@@ -127,7 +133,8 @@
       "best_seller": false,
       "timestamp": "2004-10-19 10: 23: 54",
       "poster": "https://th.bing.com/th/id/OIP.EL6O-LdJztIEA7BuFBQWtwHaEK?rs=1&pid=ImgDetMain",
-      "in_stock": true
+      "in_stock": true,
+      "id": "ed24"
     },
     {
       "carId": 6424,
@@ -143,7 +150,8 @@
       "best_seller": false,
       "timestamp": "2004-10-19 10: 23: 54",
       "poster": "https://imgd.aeplcdn.com/642x336/n/cw/ec/121943/verna-facelift-exterior-right-front-three-quarter.jpeg?isig=0&q=75",
-      "in_stock": false
+      "in_stock": false,
+      "id": "690b"
     },
     {
       "carId": 1648,
@@ -159,7 +167,8 @@
       "best_seller": false,
       "timestamp": "2004-10-19 10: 23: 54",
       "poster": "https://images.news18.com/ibnlive/uploads/2021/06/1623556020_2021-hyundai-aura.png",
-      "in_stock": true
+      "in_stock": true,
+      "id": "3c64"
     },
     {
       "carId": 1879,
@@ -175,7 +184,8 @@
       "best_seller": true,
       "timestamp": "2004-10-19 10: 23: 54",
       "poster": "https://img-ik.cars.co.za/news-site-za/images/2014/06/Grand-i10-5_1800x1800.jpg?tr=w-1200,h-800",
-      "in_stock": true
+      "in_stock": true,
+      "id": "bc82"
     },
     {
       "carId": 1349,
@@ -191,7 +201,8 @@
       "best_seller": true,
       "timestamp": "2004-10-19 10: 23: 54",
       "poster": "https://ic1.maxabout.us/autos/cars_india/N/2020/10/new-tata-nexon-front-3-quarter-view.jpg",
-      "in_stock": true
+      "in_stock": true,
+      "id": "4700"
     },
     {
       "carId": 1485,
@@ -207,7 +218,8 @@
       "best_seller": false,
       "timestamp": "2004-10-19 10: 23: 54",
       "poster": "https://4.bp.blogspot.com/-oOSRY7taTeo/WeYL7s7_8oI/AAAAAAAADKk/W27Zu3lA_LkTaJoOILKePTTG0WStERKkgCLcBGAs/s1600/Honda%2Bcivic%2B2017%2Bfault.jpg",
-      "in_stock": true
+      "in_stock": true,
+      "id": "3c24"
     }
   ],
   "featured_products": [
@@ -225,7 +237,8 @@
       "best_seller": true,
       "timestamp": "2004-10-19 10: 23: 54",
       "poster": "https://ic1.maxabout.us/autos/cars_india/N/2020/10/new-tata-nexon-front-3-quarter-view.jpg",
-      "in_stock": true
+      "in_stock": true,
+      "id": "2d09"
     },
     {
       "carId": 4548,
@@ -241,7 +254,8 @@
       "best_seller": true,
       "timestamp": "2004-10-19 10: 23: 54",
       "poster": "https://www.cartoq.com/wp-content/uploads/2021/09/XUV700-Dark-Knight-edition-featured.jpg",
-      "in_stock": false
+      "in_stock": false,
+      "id": "afa9"
     },
     {
       "carId": 4752,
@@ -257,16 +271,18 @@
       "best_seller": false,
       "timestamp": "2004-10-19 10: 23: 54",
       "poster": "https://paultan.org/image/2020/10/2021-Hyundai-i20-N-Exterior-7.jpg",
-      "in_stock": true
+      "in_stock": true,
+      "id": "2f24"
     }
   ],
   "orders": [
     {
+      "id": "fa6b"
     }
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Shivam Roy",
       "email": "shivam.roy@nashtechglobal.com",
       "password": "helloreact"
@@ -275,7 +291,13 @@
       "id": 2,
       "name": "Deepak Kumar",
       "email": "deepak.kumar@nashtechglobal.com",
-      "password": "Deepak@1234"
+      "password": "learnreact"
+    },
+    {
+      "id": 3,
+      "name": "test",
+      "email": "test@gmail.com",
+      "password": "helloreact"
     }
   ]
 }

@@ -8,7 +8,7 @@ export const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => setShowPassword(!showPassword);
-
+  
   const [users, setUsers] = useState([]); // State to hold users data
 
   // Fetch the users data from the server
@@ -29,11 +29,11 @@ export const Register = () => {
 
   const getNextId = () => {
     const maxId = users.reduce(
-      (max, user) => (user.id > max ? user.id : max),
+      (max, user) => (parseInt(user.id, 10) > max ? parseInt(user.id, 10) : max),
       0
     );
     return maxId + 1;
-  };
+  };  
 
   async function handleRegister(event) {
     event.preventDefault();
