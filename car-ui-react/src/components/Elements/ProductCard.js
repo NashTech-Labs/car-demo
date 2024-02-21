@@ -3,7 +3,7 @@ import {useCart} from "../../context";
 import {Rating} from './Rating';
 
 export const ProductCard = ({ product }) => {
-    const { brand, model, year, color, mileage, price, quantity, tax, poster, in_stock , best_seller, rating} = product;
+    const { id, brand, model, year, color, mileage, price, quantity, tax, poster, in_stock , best_seller, rating} = product;
     const { cartList, addToCart, removeFromCart } = useCart();
     const [inCart, setInCart] = useState(false);
 
@@ -21,14 +21,16 @@ export const ProductCard = ({ product }) => {
     if (!product) {
         return null;
     }
+
     return (
       <div className="m-3 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-        <a href="/" className="relative">
+        <a href={`/products/${id}`} className="relative">
+
         { best_seller && <span className="absolute top-4 left-2 px-2 bg-orange-500 bg-opacity-90 text-white rounded">Best Seller</span> }
           <img className="rounded-t-lg w-full h-64" src={poster} alt="" />
         </a>
         <div className="p-5">
-          <a href="/">
+          <a href={`/products/${id}`}>
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{brand} {model}</h5>
           </a>
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{color}</p>
