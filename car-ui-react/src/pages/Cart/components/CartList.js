@@ -1,11 +1,16 @@
 import { useState } from "react"
 import {CartCard} from "./CartCard";
-import {Checkout} from "./Checkout";
 import {useCart} from "../../../context";
+import {useNavigate} from "react-router-dom";
 
 export const CartList = () => {
     const [checkout, setCheckout] = useState(false);
-    const {cartList , total} = useCart();
+    const {cartList , total, clearCart} = useCart();
+    const navigate = useNavigate();
+    async function handleOrderSubmit(){
+        clearCart();
+        navigate("/order-summary");
+    }
 
     return (
         <>
@@ -29,12 +34,12 @@ export const CartList = () => {
                     </p>
                 </div>
                 <div className="text-right my-5">
-                    <button onClick={() => setCheckout(true)} type="button" className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-base px-7 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700">
+
+                    <button onClick={() => handleOrderSubmit()} type="button" className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-base px-7 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700">
                         PLACE ORDER <i className="ml-2 bi bi-arrow-right"></i>
                     </button>
                 </div>
             </section>
-            {checkout && <Checkout setCheckout = {setCheckout}/>}
         </>
     )
 }
