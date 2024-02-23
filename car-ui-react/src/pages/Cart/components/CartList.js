@@ -1,6 +1,5 @@
 import { useState } from "react"
 import {CartCard} from "./CartCard";
-import {Checkout} from "./Checkout";
 import {useCart} from "../../../context";
 import {useNavigate} from "react-router-dom";
 
@@ -41,7 +40,6 @@ export const CartList = () => {
                     </button>
                 </div>
             </section>
-            {checkout && <Checkout setCheckout = {setCheckout}/>}
         </>
     )
 }
