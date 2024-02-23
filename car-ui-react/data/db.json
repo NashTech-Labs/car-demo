@@ -295,6 +295,12 @@
       "name": "test",
       "email": "test@gmail.com",
       "password": "helloreact"
+    },
+    {
+      "id": 4,
+      "name": "Deepa",
+      "email": "test12@gmail",
+      "password": "test"
     }
   ]
 }
