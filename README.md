@@ -68,7 +68,7 @@ $ docker-compose down
 **2) Set GOOGLE_APPLICATION_CREDENTIALS as an environment variable**
 
 This property is utilized for connecting and authenticating GCP resources, and the following services rely on it:
-- Elasticsearch service
+- Elasticsearch service 
 - Inventory service
 - Shipment service 
 
